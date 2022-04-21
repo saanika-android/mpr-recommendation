@@ -25,10 +25,10 @@ application.config['MYSQL_DATABASE_PASSWORD'] = 'FriApr14'
 application.config['MYSQL_DATABASE_DB'] = 'recipe'
 application.config['MYSQL_DATABASE_HOST'] = 'localhost'
 """
-application.config['MYSQL_DATABASE_USER'] = 'flourishlove'
-application.config['MYSQL_DATABASE_PASSWORD'] = 'MonApr17'
+application.config['MYSQL_DATABASE_USER'] = 'root'
+application.config['MYSQL_DATABASE_PASSWORD'] = ''
 application.config['MYSQL_DATABASE_DB'] = 'recipe'
-application.config['MYSQL_DATABASE_HOST'] = 'reciperecommendation.cky4qlh0i2dz.us-east-1.rds.amazonaws.com'
+application.config['MYSQL_DATABASE_HOST'] = 'localhost'
 #application.config['MYSQL_DATABASE_PORT'] = 3306
 
 mysql.init_app(application)
