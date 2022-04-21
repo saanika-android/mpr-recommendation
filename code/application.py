@@ -9,9 +9,11 @@ import ast
 
 from settings import APP_STATIC
 
-import sys
-reload(sys)
-sys.setdefaultencoding("utf-8")
+# import sys
+import importlib
+
+# importlib.reload(sys)
+# sys.setdefaultencoding("utf-8")
 
 application = Flask(__name__)
 application.debug = True
@@ -64,7 +66,7 @@ def show_recipes():
     cur.execute("SELECT num, nutrition FROM recipe_info WHERE dbscan_label = %s;", [cur_flavor])
     fetch_result = cur.fetchall()
     satisfied_recipes = constraint.nutritional_constraints(fetch_result, cur_age, cur_weight, cur_height, cur_gender, 'Active')
-    print satisfied_recipes
+    print (satisfied_recipes)
     # provider, big_image
     error = None
     entries = []
@@ -74,7 +76,7 @@ def show_recipes():
         for i in range(0,3):
             cur.execute("SELECT name, cuisine, provider, big_image, ingredient_amount FROM recipe_info WHERE num = %s and dbscan_label = %s;", [group[i], cur_flavor])
             temp = cur.fetchall()
-            print temp
+            print (temp)
             templist.append(temp)
         entries.append(templist)
         count = count + 1
